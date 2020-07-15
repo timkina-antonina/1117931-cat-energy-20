@@ -1,7 +1,7 @@
 # Личный проект «Кэт энерджи» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Антонина Тимкина](https://up.htmlacademy.ru/adaptive/20/user/1117931).
-* Наставник: `Неизвестно`.
+* Наставник: [Денис Байдаров](https://up.htmlacademy.ru/htmlcss/28/user/7956).
 
 ---
 

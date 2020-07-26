@@ -3,50 +3,59 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Кэт энерджи</title>
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body class="page__body">
 
     <header class="page-header">
-      <a class="page-header__logo">
-        <img src="img.png" width="33" height="37" alt="Логотип Кэт энерджи">
-      </a>
-      <a class="page-header__logo-name">
-        <img src="img.png" width="101" height="18" alt="Кэт энерджи">
-      </a>
-      <nav class="main-nav">
-        <button class="main-nav__toggle" type="button">
-            <span class="visually-hidden">Открыть меню</span>
-        </button>
-        <ul class="main-nav__list site-list">
-          <li class="site-list__item site-list__item--active">
-            <a>
-              Главная
-            </a>
-          </li>
-          <li class="site-list__item">
-            <a href="catalog.html">
-              Каталог продукции
-            </a>
-          </li>
-          <li class="site-list__item">
-            <a href="form.html">
-              Подбор программы
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <div class="container">
+        <a class="page-header__logo">
+          <img src="img.png" width="33" height="37" alt="Логотип Кэт энерджи">
+        </a>
+        <a class="page-header__logo-name">
+          <img src="img.png" width="101" height="18" alt="Кэт энерджи">
+        </a>
+        <nav class="main-nav">
+          <button class="main-nav__toggle" type="button">
+              <span class="visually-hidden">Открыть меню</span>
+          </button>
+          <ul class="main-nav__list site-list">
+            <li class="site-list__item site-list__item--active">
+              <a class="site-list__text">
+                Главная
+              </a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__text" href="catalog.html">
+                Каталог продукции
+              </a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__text" href="form.html">
+                Подбор программы
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main class="page-main">
 
       <section class="promo">
-        <h1 class="promo__title">Функциональное питание для котов</h1>
-        <p class="promo__subtitle">Занялся собой? Займись котом!</p>
-        <img class="promo__img" src="img.png"  width="280" height="270" alt="Банка функционального питания">
-        <a class="button" href="program-selection.html">Подобрать программу</a>
+        <div class="promo__container">
+          <div class="container">
+            <h1 class="promo__title">Функциональное питание для котов</h1>
+            <p class="promo__subtitle">Занялся собой? Займись котом!</p>
+            <img class="promo__img" src="img.png"  width="280" height="270" alt="Банка функционального питания">
+          </div>
+        </div>
+        <div class="container">
+          <a class="promo__button button" href="program-selection.html">Подобрать программу</a>
+        </div>
       </section>
 
-      <section class="program">
+      <section class="program container">
         <h2 class="visually-hidden">Программы питания</h2>
         <ul class="program__list">
           <li class="program__item">
@@ -66,7 +75,7 @@
         </ul>
       </section>
 
-      <section class="how-it-works">
+      <section class="how-it-works container">
         <h2 class="how-it-works__title">Как это работает</h2>
           <ul class="how-it-works__list">
             <li class="how-it-works__item">
@@ -122,37 +131,36 @@
     </main>
 
     <footer class="page-footer">
-      <div class="page-footer__logo">
-        <img src="img.png" width="128" height="24" alt="Кэт энерджи">
+      <div class="container">
+        <div class="page-footer__logo">
+          <img src="img.png" width="128" height="24" alt="Кэт энерджи">
+        </div>
+        <div class="page-footer__social social">
+            <ul class="social__list">
+              <li class="social__item">
+                <a class="social__link social__link--vkontakte" href="https://vk.com/htmlacademy">
+                  <span class="visually-hidden">Вконтакте</span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link social__link--instagram" href="https://www.instagram.com/htmlacademy">
+                  <span class="visually-hidden">Инстаграм</span>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy">
+                  <span class="visually-hidden">Фейсбук</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        <div class="page-footer__copyright copyright">
+          <span class="copyright__text">HTML Academy</span>
+          <a class="copyright__logo" href="https://htmlacademy.ru/intensive/adaptive">
+            <img src="img.png" width="27" height="34" alt="Логотип HTML Academy">
+          </a>
+        </div>
       </div>
-
-      <div class="page-footer__social social">
-        <ul class="social__list">
-          <li class="social__item">
-            <a class="social__link social__link--vkontakte" href="https://vk.com/htmlacademy">
-              <span class="visually-hidden">Вконтакте</span>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link social__link--instagram" href="https://www.instagram.com/htmlacademy">
-              <span class="visually-hidden">Инстаграм</span>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy">
-              <span class="visually-hidden">Фейсбук</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="page-footer__copyright copyright">
-        <span class="copyright__text">HTML Academy</span>
-        <a class="copyright__logo" href="https://htmlacademy.ru/intensive/adaptive">
-          <img src="img.png" width="27" height="34" alt="Логотип HTML Academy">
-        </a>
-      </div>
-
     </footer>
 
   </body>

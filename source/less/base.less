@@ -1,5 +1,7 @@
 .container {
   padding: 0 20px;
+  width: 280px;
+  margin: 0 auto;
 }
 
 .visually-hidden:not(:focus):not(:active),
@@ -15,4 +17,23 @@ input[type="radio"].visually-hidden {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-width: @tablet-width) {
+  .container {
+    padding: 0 30px;
+    width: 708px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .container {
+    padding: 0 55px;
+    width: 1220px;
+  }
 }

@@ -5,6 +5,39 @@
   line-height: 40px;
 }
 
+.how-it-works__list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
 .how-it-works__item {
   color: @basic-grey-dark;
+  margin-bottom: 20px;
+}
+
+@media (min-width: @tablet-width) {
+  .how-it-works__list {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .how-it-works__item {
+    width: 230px;
+    margin-right: 124px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .how-it-works__list {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .how-it-works__item {
+    width: 230px;
+    margin-right: 0;
+  }
 }

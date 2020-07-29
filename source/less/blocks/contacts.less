@@ -1,3 +1,15 @@
+.contacts__address {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+}
+
 .contacts__map {
   background-color: @basic-grey-light;
+}
+
+@media (min-width: @tablet-width) {
+  .contacts__address {
+    grid-template-columns: 170px 160px;
+  }
 }

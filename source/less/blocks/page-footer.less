@@ -1,3 +1,19 @@
 .page-footer {
   background-color: @basic-grey-lighter;
 }
+
+.page-footer__container {
+  display: grid;
+}
+
+@media (min-width: @tablet-width) {
+  .page-footer__container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .page-footer__container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

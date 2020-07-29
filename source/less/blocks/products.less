@@ -1,1 +1,18 @@
-// comment
+.products__container {
+  display: grid;
+}
+
+@media (min-width: @tablet-width) {
+  .products__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .products__container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 80px;
+    row-gap: 60px;
+  }
+}

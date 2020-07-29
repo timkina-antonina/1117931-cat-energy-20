@@ -3,6 +3,7 @@
   background-image: url("../img/index-background-mobile@1x.jpg");
   background-repeat: no-repeat;
   min-height: 305px;
+  text-align: center;
 }
 
 .promo__title {
@@ -26,4 +27,38 @@
   color: @basic-white;
   font-size: 14px;
   line-height: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+@media (min-width: @tablet-width) {
+  .promo__container {
+    background-color: @basic-white;
+    background-image: none;
+    text-align: left;
+  }
+
+  .promo__title {
+    color: @basic-black;
+  }
+
+  .promo__subtitle {
+    color: @basic-black;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .promo__container {
+    background-color: @basic-white;
+    background-image: none;
+    text-align: left;
+  }
+
+  .promo__title {
+    color: @basic-black;
+  }
+
+  .promo__subtitle {
+    color: @basic-black;
+  }
 }

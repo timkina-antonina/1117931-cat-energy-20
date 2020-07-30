@@ -2,6 +2,10 @@
   background-color: @special-grey-lighter;
 }
 
+.example__container {
+  display: grid;
+}
+
 .example__title {
   font-family: @font-family-title;
   font-size: 36px;
@@ -11,6 +15,10 @@
 
 .example__text {
   color: @basic-grey-dark;
+}
+
+.example__indicators-and-price {
+  display: grid;
 }
 
 .example__indicators {
@@ -25,4 +33,25 @@
   line-height: 20px;
   text-transform: uppercase;
   text-align: center;
+}
+
+.example__slider {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (min-width: @tablet-width) {
+  .example__indicators-and-price {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .example__container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .example__indicators-and-price {
+    grid-template-columns: 1fr;
+  }
 }

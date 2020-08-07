@@ -4,6 +4,7 @@
 }
 
 .show-all__title {
+  position: relative;
   font-family: @font-family-title;
   color: @basic-black;
   font-size: 16px;
@@ -11,6 +12,20 @@
   text-transform: uppercase;
   font-weight: normal;
   text-align: center;
+  padding-top: 63px;
+  margin-bottom: 9px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: calc(50% - 15px);
+    width: 30px;
+    height: 30px;
+    background-image: url("../img/icon-plus.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
 }
 
 .show-all__text {
@@ -19,36 +34,81 @@
   line-height: 16px;
   font-weight: normal;
   text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .show-all__button {
   background-color: @basic-grey-lighter;
-  color: @basic-black;
+  color: @basic-grey-dark;
   text-decoration: none;
   display: block;
   margin-bottom: 25px;
   padding-top: 11px;
   padding-bottom: 11px;
+
+  &:hover,
+  &:focus {
+    background-color: @special-grey-light;
+  }
+
+  &:active span {
+    opacity: 0.3;
+  }
 }
 
 @media (min-width: @tablet-width) {
   .show-all {
     border: 1px solid @special-grey-light;
+    margin-top: 80px;
+  }
+
+  .show-all__title {
+    color: @basic-black-light;
+    font-size: 20px;
+    line-height: 22px;
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-top: 145px;
+    margin-bottom: 24px;
+
+    &::after {
+      top: 35px;
+      right: calc(50% - 30px);
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .show-all__text {
+    font-size: 16px;
+    line-height: 18px;
+    padding-left: 75px;
+    padding-right: 75px;
   }
 
   .show-all__button {
     margin-left: 38px;
     margin-right: 38px;
+    font-size: 16px;
+    margin-top: 85px;
   }
 }
 
 @media (min-width: @desktop-width) {
-  .show-all {
-    border: 1px solid @special-grey-light;
+  .show-all__title {
+    padding-left: 39px;
+    padding-right: 39px;
+  }
+
+  .show-all__text {
+    padding-left: 39px;
+    padding-right: 39px;
   }
 
   .show-all__button {
     margin-left: 38px;
     margin-right: 38px;
+    margin-top: 65px;
   }
 }

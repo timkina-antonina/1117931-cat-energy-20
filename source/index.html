@@ -17,7 +17,7 @@
               <span class="visually-hidden">Открыть меню</span>
           </button>
         </div>
-        <nav class="main-nav main-nav--opened">
+        <nav class="main-nav">
           <ul class="main-nav__list site-list">
             <li class="site-list__item site-list__item--index site-list__item--active">
               <a class="site-list__text">
@@ -81,22 +81,22 @@
       <section class="how-it-works container">
         <h2 class="how-it-works__title">Как это работает</h2>
           <ul class="how-it-works__list">
-            <li class="how-it-works__item">
+            <li class="how-it-works__item how-it-works__item--1">
               <span class="how-it-works__text">
                 Функциональное питание содержит только полезные питательные вещества.
               </span>
             </li>
-            <li class="how-it-works__item">
+            <li class="how-it-works__item how-it-works__item--2">
               <span class="how-it-works__text">
                 Выпускается в виде порошка, который нужно лишь залить кипятком и готово.
               </span>
             </li>
-            <li class="how-it-works__item">
+            <li class="how-it-works__item how-it-works__item--3">
               <span class="how-it-works__text">
                 Замените один-два приема обычной еды на наше функциональное питание.
               </span>
             </li>
-            <li class="how-it-works__item">
+            <li class="how-it-works__item how-it-works__item--4">
               <span class="how-it-works__text">
                 Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!
               </span>
@@ -217,24 +217,17 @@
       var mainNav = document.querySelector('.main-nav');
 
       pageHeader.classList.remove('page-header--nojs');
-      mainNav.classList.remove('main-nav--opened');
-      mainNav.classList.add('main-nav--closed');
+      mainNav.classList.toggle('main-nav--closed');
 
       navButton.addEventListener('click', function() {
-      if (mainNav.classList.contains('main-nav--closed')) {
-        mainNav.classList.remove('main-nav--closed');
-        mainNav.classList.add('main-nav--opened');
-      } else {
-        mainNav.classList.add('main-nav--closed');
-        mainNav.classList.remove('main-nav--opened');
-      }
-      if (navButton.classList.contains('page-header__nav-button--open')) {
-        navButton.classList.remove('page-header__nav-button--open');
-        navButton.classList.add('page-header__nav-button--close');
-      } else {
-        navButton.classList.add('page-header__nav-button--open');
-        navButton.classList.remove('page-header__nav-button--close');
-      }
+        mainNav.classList.toggle('main-nav--closed');
+        if (navButton.classList.contains('page-header__nav-button--open')) {
+          navButton.classList.remove('page-header__nav-button--open');
+          navButton.classList.add('page-header__nav-button--close');
+        } else {
+          navButton.classList.add('page-header__nav-button--open');
+          navButton.classList.remove('page-header__nav-button--close');
+        }
       });
     </script>
 

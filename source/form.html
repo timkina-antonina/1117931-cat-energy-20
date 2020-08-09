@@ -17,7 +17,7 @@
             <span class="visually-hidden">Открыть меню</span>
           </button>
         </div>
-        <nav class="main-nav main-nav--opened">
+        <nav class="main-nav">
           <ul class="main-nav__list site-list">
             <li class="site-list__item">
               <a class="site-list__text" href="index.html">
@@ -210,24 +210,17 @@
       var mainNav = document.querySelector('.main-nav');
 
       pageHeader.classList.remove('page-header--nojs');
-      mainNav.classList.remove('main-nav--opened');
-      mainNav.classList.add('main-nav--closed');
+      mainNav.classList.toggle('main-nav--closed');
 
       navButton.addEventListener('click', function() {
-      if (mainNav.classList.contains('main-nav--closed')) {
-        mainNav.classList.remove('main-nav--closed');
-        mainNav.classList.add('main-nav--opened');
-      } else {
-        mainNav.classList.add('main-nav--closed');
-        mainNav.classList.remove('main-nav--opened');
-      }
-      if (navButton.classList.contains('page-header__nav-button--open')) {
-        navButton.classList.remove('page-header__nav-button--open');
-        navButton.classList.add('page-header__nav-button--close');
-      } else {
-        navButton.classList.add('page-header__nav-button--open');
-        navButton.classList.remove('page-header__nav-button--close');
-      }
+        mainNav.classList.toggle('main-nav--closed');
+        if (navButton.classList.contains('page-header__nav-button--open')) {
+          navButton.classList.remove('page-header__nav-button--open');
+          navButton.classList.add('page-header__nav-button--close');
+        } else {
+          navButton.classList.add('page-header__nav-button--open');
+          navButton.classList.remove('page-header__nav-button--close');
+        }
       });
     </script>
 

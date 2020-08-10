@@ -13,7 +13,7 @@
           <a class="page-header__logo" href="index.html" aria-label="Ссылка на главную страницу">
             <img src="../img/logo-mobile.svg" width="189" height="38" alt="Логотип Кэт энерджи">
           </a>
-          <button class="page-header__nav-button page-header__nav-button--open" type="button">
+          <button class="page-header__nav-button" type="button">
             <span class="visually-hidden">Открыть меню</span>
           </button>
         </div>
@@ -204,25 +204,7 @@
       </div>
     </footer>
 
-    <script>
-      var pageHeader = document.querySelector('.page-header');
-      var navButton = document.querySelector('.page-header__nav-button');
-      var mainNav = document.querySelector('.main-nav');
-
-      pageHeader.classList.remove('page-header--nojs');
-      mainNav.classList.toggle('main-nav--closed');
-
-      navButton.addEventListener('click', function() {
-        mainNav.classList.toggle('main-nav--closed');
-        if (navButton.classList.contains('page-header__nav-button--open')) {
-          navButton.classList.remove('page-header__nav-button--open');
-          navButton.classList.add('page-header__nav-button--close');
-        } else {
-          navButton.classList.add('page-header__nav-button--open');
-          navButton.classList.remove('page-header__nav-button--close');
-        }
-      });
-    </script>
+    <script src="js/menu.js"></script>
 
   </body>
 </html>

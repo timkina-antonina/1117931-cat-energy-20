@@ -1,1 +1,42 @@
-// comment
+.social__list {
+  display: grid;
+  grid-template-columns: 25px 25px 25px;
+  column-gap: 30px;
+  justify-content: center;
+  list-style: none;
+  padding-left: 0;
+  padding-top: 7px;
+  padding-bottom: 2px;
+}
+
+.social__item {
+  text-align: center;
+}
+
+.social__link {
+  &:hover path,
+  &:focus path {
+    fill: @basic-green;
+  }
+
+  &:active path {
+    opacity: 0.3;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .social__link--vkontakte svg {
+    width: 30px;
+    height: 22px;
+  }
+
+  .social__link--instagram svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .social__link--facebook svg {
+    width: 13px;
+    height: 27px;
+  }
+}

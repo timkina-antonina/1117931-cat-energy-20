@@ -1,9 +1,20 @@
+.promo {
+  min-height: 487px;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+}
+
 .promo__container {
-  background-color: @basic-green;
+  background-color: @basic-green-dark;
   background-image: url("../img/index-background-mobile@1x.jpg");
   background-repeat: no-repeat;
+  background-position: center;
   min-height: 305px;
   text-align: center;
+}
+
+.promo__top {
+  position: relative;
 }
 
 .promo__title {
@@ -12,6 +23,9 @@
   line-height: 36px;
   color: @basic-white;
   font-weight: normal;
+  margin: 0;
+  padding-top: 27px;
+  padding-bottom: 12px;
 }
 
 .promo__subtitle {
@@ -20,45 +34,126 @@
   line-height: 14px;
   text-transform: uppercase;
   color: @basic-white;
+  padding-bottom: 15px;
+}
+
+.promo__img {
+  position: absolute;
+  left: calc(50% - 140px);
+}
+
+.promo__bottom {
+  align-self: end;
 }
 
 .promo__button {
+  display: block;
   background-color: @basic-green;
   color: @basic-white;
   font-size: 14px;
   line-height: 18px;
   text-decoration: none;
-  display: block;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  margin-bottom: 8px;
+
+  &:hover,
+  &:focus {
+    background-color: @basic-green-dark;
+  }
+
+  &:active span {
+    background-color: @basic-green-dark;
+    opacity: 0.3;
+  }
 }
 
 @media (min-width: @tablet-width) {
+  .promo {
+    min-height: 872px;
+    position: relative;
+  }
+
   .promo__container {
     background-color: @basic-white;
-    background-image: none;
+    background-image: url("../img/index-background-index-can-tablet@1x.jpg");
     text-align: left;
   }
 
   .promo__title {
+    font-size: 60px;
+    line-height: 60px;
     color: @basic-black;
+    padding-left: 87px;
+    padding-top: 78px;
   }
 
   .promo__subtitle {
+    font-size: 20px;
+    line-height: 20px;
     color: @basic-black;
+    padding-left: 87px;
+    padding-top: 8px;
+  }
+
+  .promo__button {
+    font-size: 20px;
+    line-height: 0px;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    padding-left: 26px;
+    padding-right: 26px;
+    margin-left: 87px;
+    position: absolute;
+    bottom: 504px;
   }
 }
 
 @media (min-width: @desktop-width) {
+  .promo {
+    position: relative;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: none;
+    min-height: 570px;
+    margin-bottom: 80px;
+  }
+
   .promo__container {
     background-color: @basic-white;
     background-image: none;
+    max-width: 610px;
+    // padding-right: 0px;
     text-align: left;
+    margin-left: auto;
+    margin-right: 60px;
+  }
+
+  .promo__top {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
   }
 
   .promo__title {
     color: @basic-black;
+    padding-top: 98px;
+    padding-left: 0;
   }
 
   .promo__subtitle {
     color: @basic-black;
+    padding-left: 0;
+  }
+
+  .promo__bottom {
+    align-self: stretch;
+    background-color: @basic-green-dark;
+    background-image: url("../img/index-background-desktop@1x.jpg");
+    background-repeat: no-repeat;
+  }
+
+  .promo__button {
+    position: absolute;
+    // left: 300px;
   }
 }

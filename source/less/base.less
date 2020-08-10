@@ -1,6 +1,7 @@
 .container {
   padding: 0 20px;
-  width: 280px;
+  min-width: 280px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -27,13 +28,11 @@ img {
 @media (min-width: @tablet-width) {
   .container {
     padding: 0 30px;
-    width: 708px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .container {
     padding: 0 55px;
-    width: 1220px;
   }
 }

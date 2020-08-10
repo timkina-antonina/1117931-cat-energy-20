@@ -1,5 +1,33 @@
+.copyright {
+  &:active .copyright__text {
+    opacity: 0.3;
+  }
+
+  &:hover .copyright__logo path,
+  &:focus .copyright__logo path {
+    fill: @basic-green;
+  }
+
+  &:active .copyright__logo {
+    opacity: 0.3;
+  }
+}
+
 .copyright__text {
   font-size: 16px;
   line-height: 18px;
   color: @basic-grey-dark;
+  padding-top: 7px;
+}
+
+@media (min-width: @tablet-width) {
+  .copyright__text {
+    margin-right: 22px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .copyright__text {
+    margin-right: 22px;
+  }
 }

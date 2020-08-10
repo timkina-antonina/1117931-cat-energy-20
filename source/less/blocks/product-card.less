@@ -1,5 +1,20 @@
 .product-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   border-top: 1px solid @special-grey-light;
+}
+
+.product-card__description {
+  text-align: left;
+}
+
+.product-card__table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+.product-card__link {
+  text-decoration: none;
 }
 
 .product-card__title {
@@ -9,6 +24,9 @@
   line-height: 20px;
   text-transform: uppercase;
   font-weight: normal;
+  padding-top: 5px;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 .product-card__name-attribut,
@@ -19,36 +37,87 @@
   font-weight: normal;
 }
 
+.product-card__value-attribut {
+  text-align: right;
+}
+
 .product-card__button {
+  grid-column-start: 1;
+  grid-column-end: 3;
   background-color: @basic-green;
   color: @basic-white;
   text-decoration: none;
   display: block;
   margin-bottom: 24px;
+  margin-top: -4px;
   padding-top: 11px;
   padding-bottom: 11px;
+
+  &:hover,
+  &:focus {
+    background-color: @basic-green-dark;
+  }
+
+  &:active {
+    background-color: @basic-green-dark;
+  }
+
+  &:active span {
+    opacity: 0.3;
+  }
 }
 
 @media (min-width: @tablet-width) {
   .product-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     border-top: none;
     background-color: @basic-grey-lighter;
+    padding-left: 38px;
+    padding-right: 38px;
+    margin-top: 80px;
+  }
+
+  .product-card__img {
+    position: absolute;
+  }
+
+  .product-card__table {
+    border-spacing: 0 12px;
+  }
+
+  .product-card__table th {
+    padding-bottom: 2px;
+    border-bottom: 1px solid @special-grey-dark;
+  }
+
+  .product-card__title {
+    color: @basic-grey-darker;
+    font-size: 20px;
+    line-height: 24px;
+    padding-top: 161px;
+    padding-bottom: 10px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .product-card__name-attribut,
+  .product-card__value-attribut {
+    font-size: 16px;
+    line-height: 16px;
   }
 
   .product-card__button {
-    margin-left: 38px;
-    margin-right: 38px;
+    margin-bottom: 38px;
+    margin-top: 25px;
   }
 }
 
 @media (min-width: @desktop-width) {
-  .product-card {
-    border-top: none;
-    background-color: @basic-grey-lighter;
-  }
-
   .product-card__button {
-    margin-left: 38px;
-    margin-right: 38px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }

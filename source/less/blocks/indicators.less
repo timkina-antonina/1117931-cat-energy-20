@@ -1,16 +1,45 @@
 .indicators__item {
   display: grid;
   text-align: center;
+  border: 1px solid @special-grey-dark;
+  border-radius: 4px;
+  height: 53px;
 }
 
 .indicators__value {
   font-family: @font-family-title;
   font-size: 24px;
   line-height: 24px;
+  text-transform: uppercase;
+  padding-top: 13px;
+  padding-bottom: 10px;
 }
 
 .indicators__name {
   font-size: 12px;
   line-height: 12px;
   font-family: @basic-grey-dark;
+  color: @basic-grey-dark;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: @special-grey-lighter;
+}
+
+@media (min-width: @tablet-width) {
+  .indicators__item {
+    height: 69px;
+  }
+
+  .indicators__value {
+    font-size: 30px;
+    line-height: 37px;
+  }
+
+  .indicators__name {
+    font-size: 14px;
+    line-height: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: @basic-white;
+  }
 }

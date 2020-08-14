@@ -2,12 +2,49 @@
   background-color: @basic-green;
   background-image: url("../img/gift-photo-mobile@1x.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   min-height: 289px;
+  margin-top: 39px;
+  margin-bottom: 35px;
 }
 
 .present__text {
   font-size: 16px;
   line-height: 20px;
   color: @basic-white;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 176px;
   text-align: center;
+}
+
+@media (min-width: @tablet-width) {
+  .present {
+    min-height: 200px;
+    margin-top: 67px;
+    margin-bottom: 77px;
+  }
+
+  .present__text {
+    padding-left: 423px;
+    padding-right: 124px;
+    text-align: left;
+    padding-top: 60px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .present {
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .present__text {
+    padding-left: 42px;
+    padding-right: 42px;
+    text-align: center;
+    padding-top: 185px;
+  }
 }

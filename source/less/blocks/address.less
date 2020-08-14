@@ -1,3 +1,8 @@
+.address {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
 .address__partnership {
   font-family: @font-family-title;
   font-size: 16px;
@@ -7,6 +12,34 @@
 }
 
 .address__address {
-  line-height: 18px;
+  line-height: 20px;
   color: @basic-grey-dark;
+}
+
+@media (min-width: @tablet-width) {
+  .address {
+    padding-top: 45px;
+    padding-bottom: 40px;
+  }
+
+  .address__partnership {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .address__address {
+    font-size: 16px;
+    text-align: right;
+
+    & span {
+      display: block;
+      padding-top: 20px;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .address__address {
+    text-align: left;
+  }
 }

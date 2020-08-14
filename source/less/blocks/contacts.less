@@ -1,15 +1,54 @@
+.contacts {
+  display: grid;
+  position: relative;
+  background-color: @basic-grey-lighter;
+}
+
+.contacts--index {
+  background-color: @basic-white;
+}
+
 .contacts__address {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
   justify-content: space-between;
 }
 
 .contacts__map {
+  width: 100%;
+  height: 400px;
   background-color: @basic-grey-light;
+  background-image: url("../img/bg-map-mobile@1x.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  border: none;
 }
 
 @media (min-width: @tablet-width) {
   .contacts__address {
-    grid-template-columns: 170px 160px;
+    column-gap: 290px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .contacts {
+    display: block;
+  }
+
+  .contacts__address {
+    position: absolute;
+    column-gap: 85px;
+    background-color: @basic-white;
+    width: 35%;
+    top: 95px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .contacts__map {
+    margin-bottom: -5px;
   }
 }

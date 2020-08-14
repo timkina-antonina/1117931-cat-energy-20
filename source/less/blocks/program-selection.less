@@ -1,6 +1,7 @@
 .program-selection__text {
   font-family: @font-family-title;
   text-transform: uppercase;
+  margin-bottom: 39px;
 }
 
 .program-selection__layout {
@@ -17,11 +18,49 @@
   font-size: 24px;
   line-height: 26px;
   font-weight: normal;
+  padding-top: 24px;
+  margin-bottom: 31px;
 }
 
 .program-selection__group {
   border: none;
   padding: 0;
+  padding-bottom: 13px;
+}
+
+.program-selection__group--cat {
+  border-bottom: 1px solid @special-grey-darker;
+}
+
+.program-selection__group--program {
+  padding-bottom: 0;
+  border-bottom: 1px solid @special-grey-darker;
+}
+
+.program-selection__group--comment {
+  padding-bottom: 7px;
+
+  & .program-selection__title {
+    padding-top: 5px;
+  }
+
+  & .program-selection__field {
+    min-height: 140px;
+    width: calc(100% - 33px);
+    padding-top: 10px;
+  }
+}
+
+.program-selection__group--additional {
+  & .program-selection__title {
+    padding-top: 0;
+    margin-bottom: 12px;
+  }
+
+  & .program-selection__label {
+    padding-left: 45px;
+    margin-bottom: 12px;
+  }
 }
 
 .program-selection__list {
@@ -30,6 +69,7 @@
 }
 
 .program-selection__item {
+  position: relative;
   display: flex;
 }
 
@@ -38,10 +78,19 @@
   font-size: 16px;
   text-transform: uppercase;
   color: @basic-grey-dark;
+  padding-right: 14px;
+  white-space: nowrap;
+  padding-top: 13px;
 }
 
 .program-selection__field {
   width: 100%;
+  height: 37px;
+  border: 1px solid @special-grey;
+  margin-bottom: 13px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 5px;
 
   &::placeholder {
     font-family: @font-family-title;
@@ -49,21 +98,233 @@
     text-transform: uppercase;
     color: @basic-grey-dark;
   }
+
+  &:hover,
+  &:focus {
+    border-color: @special-grey-dark;
+  }
+
+  &:active {
+    border-color: @basic-grey-dark;
+  }
+
+  & .error {
+    border-color: @error-color;
+  }
+}
+
+.program-selection__radio {
+  & + label {
+    margin-left: 45px;
+    margin-bottom: 12px;
+  }
+
+  & + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 13px;
+    height: 13px;
+    background-color: @basic-white;
+    border-radius: 50%;
+    border: 7px solid @basic-white;
+    filter: drop-shadow(0 0 1px @special-grey-dark);
+  }
+
+  &:checked + label::before {
+    background-color: @basic-green;
+  }
+
+  &:hover + label::before {
+    filter: drop-shadow(0 0 1px @basic-grey-light);
+  }
+
+  &:active + label {
+    opacity: 0.3;
+  }
+}
+
+.program-selection__checkbox {
+  & + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 28px;
+    height: 28px;
+    background-color: @basic-white;
+    border: 1px solid @special-grey-dark;
+  }
+
+  &:checked + label::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 7px;
+    width: 18px;
+    height: 14px;
+    background-image: url("../img/icon-tick.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+
+  &:hover + label::before {
+    border-color: @basic-grey-light;
+  }
+
+  &:active + label {
+    opacity: 0.3;
+  }
 }
 
 .program-selection__button {
   background-color: @basic-green;
   color: @basic-white;
+  padding-top: 9px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  line-height: 20px;
+
+  &:hover,
+  &:focus {
+    background-color: @basic-green-dark;
+  }
+
+  &:active {
+    background-color: @basic-green-dark;
+  }
+
+  &:active span {
+    opacity: 0.3;
+  }
 }
 
 .program-selection__footnote {
   font-size: 14px;
   line-height: 16px;
+  text-align: center;
+  padding-top: 9px;
+  padding-bottom: 10px;
 }
 
 @media (min-width: @tablet-width) {
+  .program-selection .container {
+    padding-left: 70px;
+    padding-right: 65px;
+  }
+
+  .program-selection__text {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 66px;
+  }
+
+  .program-selection__title {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  .program-selection__group--cat {
+    border-bottom: none;
+    margin-bottom: 40px;
+  }
+
+  .program-selection__group--program {
+    border: 1px solid @special-grey-darker;
+    margin-bottom: 51px;
+  }
+
+  .program-selection__group--contacts {
+    margin-bottom: 28px;
+
+    & .program-selection__title {
+      margin-bottom: 75px;
+    }
+  }
+
+  .program-selection__group--comment {
+    margin-bottom: 34px;
+
+    & .program-selection__title {
+      margin-bottom: 76px;
+    }
+
+    & .program-selection__field {
+      min-height: 160px;
+      width: calc(100% - 42px);
+    }
+  }
+
+  .program-selection__group--additional {
+    & .program-selection__title {
+      margin-bottom: 36px;
+    }
+
+    & .program-selection__label {
+      padding-left: 56px;
+      margin-bottom: 28px;
+    }
+  }
+
+  .program-selection__radio {
+    & + label {
+      margin-left: 85px;
+    }
+
+    & + label::before {
+      left: 27px;
+      top: 9px;
+      width: 18px;
+      height: 18px;
+      border: 10px solid @basic-white;
+    }
+  }
+
+  .program-selection__checkbox {
+    & + label::before {
+      width: 38px;
+      height: 38px;
+    }
+
+    &:checked + label::after {
+      top: 21px;
+      left: 9px;
+    }
+  }
+
+  .program-selection__button {
+    font-size: 20px;
+  }
+
+  .program-selection__footnote {
+    font-size: 16px;
+    text-align: left;
+    padding-top: 5px;
+  }
+
+  .program-selection__label {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .program-selection__field {
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 9px;
+    margin-bottom: 20px;
+
+    &::placeholder {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
   .program-selection__layout--2-columns {
     grid-template-columns: 1fr 1fr;
+    column-gap: 60px;
+    margin-bottom: 65px;
   }
 
   .program-selection__layout--2-4-columns {
@@ -72,11 +333,36 @@
 }
 
 @media (min-width: @desktop-width) {
+  .program-selection .container {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+
+  .program-selection__group--cat {
+    margin-bottom: 0;
+  }
+
+  .program-selection__group--program {
+    margin-bottom: 45px;
+  }
+
   .program-selection__layout {
     grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
   }
 
   .program-selection__layout--2-4-columns {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 50px;
+  }
+
+  .program-selection__button {
+    margin-top: 12px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+  }
+
+  .program-selection__footnote {
+    display: none;
   }
 }

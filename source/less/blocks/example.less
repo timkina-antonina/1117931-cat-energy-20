@@ -39,6 +39,15 @@
   text-transform: uppercase;
   text-align: center;
   padding-top: 20px;
+
+  br {
+    display: none;
+  }
+}
+
+.example__img {
+  display: block;
+  margin: 0 auto;
 }
 
 .example__slider {
@@ -88,11 +97,19 @@
     line-height: 28px;
     text-align: right;
     padding-top: 15px;
+
+    br {
+      display: block;
+    }
   }
 
   .example__indicators-and-price {
     grid-template-columns: 2fr 1fr;
     column-gap: 60px;
+  }
+
+  .example__img {
+    padding-top: 50px;
   }
 
   .example__slider {

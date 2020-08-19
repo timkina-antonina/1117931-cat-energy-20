@@ -11,7 +11,11 @@
       <div class="container">
         <div class="page-header__container">
           <a class="page-header__logo" href="index.html" aria-label="Ссылка на главную страницу">
-            <img src="../img/logo-mobile.svg" width="189" height="38" alt="Логотип Кэт энерджи">
+            <picture>
+              <source media="(min-width: 1200px)" srcset="img/logo-desktop.svg">
+              <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+              <img src="img/logo-mobile.svg" width="191" height="38" alt="Кэт энерджи">
+            </picture>
           </a>
           <button class="page-header__nav-button" type="button">
             <span class="visually-hidden">Открыть меню</span>
@@ -41,7 +45,7 @@
 
     <main class="page-main">
       <div class="container">
-        <h1 class="page-main__title page-main__title--form">Подбор программы</h1>
+        <h1 class="page-main__title">Подбор программы</h1>
       </div>
       <section class="program-selection">
         <div class="container">
@@ -152,7 +156,7 @@
     <footer class="page-footer">
       <div class="page-footer__container container">
         <div class="page-footer__logo">
-          <img src="../img/logo-footer.svg" width="128" height="24" alt="Кэт энерджи">
+          <img src="img/logo-footer.svg" width="128" height="24" alt="Кэт энерджи">
         </div>
         <div class="page-footer__social social">
           <ul class="social__list">

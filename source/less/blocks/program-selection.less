@@ -73,6 +73,38 @@
   display: flex;
 }
 
+.program-selection__item--email {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 15px;
+    width: 20px;
+    height: 14px;
+    background-image: url("../img/icon-mail.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+}
+
+.program-selection__item--phone {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/icon-phone.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+}
+
 .program-selection__label {
   font-family: @font-family-title;
   font-size: 16px;
@@ -292,6 +324,15 @@
       left: 9px;
     }
   }
+
+  .program-selection__item--email::after {
+    top: 19px;
+  }
+
+  .program-selection__item--phone::after {
+    top: 15px;
+  }
+
 
   .program-selection__button {
     font-size: 20px;

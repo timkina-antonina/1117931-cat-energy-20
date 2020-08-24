@@ -36,7 +36,7 @@
     height: 6px;
     border-radius: 6px;
     left: calc(50% - 39px);
-    top: 74%;
+    top: 73%;
     background-color: @basic-green;
   }
 }
@@ -51,7 +51,7 @@
     height: 6px;
     border-radius: 6px;
     left: calc(50%);
-    top: 74%;
+    top: 73%;
     background-color: @basic-green;
   }
 }
@@ -60,6 +60,7 @@
   .slider-weight-change__label {
     font-size: 20px;
     line-height: 30px;
+    margin-top: -8px;
   }
 
   .slider-weight-change__label--right {
@@ -69,10 +70,25 @@
       border: none;
       left: calc(50% - 214px);
       top: 65%;
-      background-color: @special-grey-dark;
+      background-color: @special-grey-darker;
     }
 
     &::after {
+      width: 8px;
+      height: 8px;
+      background-color: @basic-green;
+      border: 12px solid @basic-white;
+      border-radius: 50%;
+      left: calc(50% - 15px);
+      top: 42%;
+      filter:
+        drop-shadow(0 0 1px @special-grey-dark)
+        drop-shadow(0 1px 3px rgba(0, 0, 0, 0.16));
+    }
+  }
+
+  .slider-weight-change__slider {
+    &:checked + label::after {
       width: 8px;
       height: 8px;
       background-color: @basic-green;

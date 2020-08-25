@@ -60,7 +60,8 @@
   .slider-weight-change__label {
     font-size: 20px;
     line-height: 30px;
-    margin-top: -8px;
+    margin-top: -5px;
+    border-bottom: 1px dotted @basic-grey-light;
   }
 
   .slider-weight-change__label--right {
@@ -100,5 +101,11 @@
         drop-shadow(0 0 1px @special-grey-dark)
         drop-shadow(0 1px 3px rgba(0, 0, 0, 0.16));
     }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .slider-weight-change {
+    margin-top: -15px;
   }
 }

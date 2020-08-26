@@ -14,12 +14,16 @@
 }
 
 .social__link {
-  &:hover path,
-  &:focus path {
+  svg {
+    fill: #666666;
+  }
+
+  &:hover svg,
+  &:focus svg {
     fill: @basic-green;
   }
 
-  &:active path {
+  &:active svg {
     opacity: 0.3;
   }
 }

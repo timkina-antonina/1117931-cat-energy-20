@@ -9,6 +9,8 @@
 }
 
 .program__item {
+  display: grid;
+  grid-template-rows: min-content auto min-content;
   box-sizing: border-box;
   background-color: @basic-grey-lighter;
   margin-bottom: 20px;
@@ -99,6 +101,10 @@
 }
 
 @media (min-width: @tablet-width) {
+  .program {
+    margin-top: -36px;
+  }
+
   .program__item {
     min-height: 372px;
     margin-bottom: 30px;
@@ -166,6 +172,10 @@
 }
 
 @media (min-width: @desktop-width) {
+  .program {
+    margin-top: 30px;
+  }
+
   .program__list {
     display: grid;
     grid-template-columns: 47% 47%;
@@ -180,7 +190,7 @@
     font-size: 36px;
     line-height: 36px;
     margin-left: 160px;
-    margin-bottom: 65px;
+    margin-bottom: 45px;
 
     &::before {
       width: 100px;
@@ -213,7 +223,10 @@
   }
 
   .program__description {
-    padding-bottom: 25px;
     margin-bottom: 0;
+  }
+
+  .program__button {
+    padding-bottom: 3px;
   }
 }

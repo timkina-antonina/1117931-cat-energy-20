@@ -16,8 +16,8 @@ const sync = require("browser-sync").create();
 const images = () => {
   return gulp.src("source/img/**/*.{jpg,png,svg}")
     .pipe(imagemin([
+      imagemin.mozjpeg({quality: 75, progressive: true}),
       imagemin.optipng({optimizationLevel: 3}),
-      imagemin.jpegtran({progressive: true}),
       imagemin.svgo()
     ]))
     .pipe(gulp.dest("build/img"))
@@ -48,7 +48,7 @@ const styles = () => {
       autoprefixer()
     ]))
     .pipe(csso())
-    .pipe(rename("styles.min.css"))
+    //.pipe(rename("styles.min.css"))
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/css"))
     .pipe(sync.stream());
@@ -62,6 +62,7 @@ const copy = () => {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**",
+    "!source/img/**/icon-*.svg",
     "source/js/**",
     "source/*.ico",
     "source/*.html"
@@ -83,13 +84,7 @@ exports.clean = clean;
 
 // Build
 
-const build = () => gulp.series(
-  "clean",
-  "copy",
-  "styles",
-  "sprite",
-  "images"
-);
+const build = gulp.series(clean, copy, styles, sprite, images);
 
 exports.build = build;
 

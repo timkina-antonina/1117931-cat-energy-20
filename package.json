@@ -13,9 +13,10 @@
     "gulp-less": "4.0.1",
     "gulp-plumber": "1.2.1",
     "gulp-postcss": "8.0.0",
+    "gulp-rename": "^2.0.0",
     "gulp-sourcemaps": "2.6.5",
     "gulp-svgstore": "^7.0.1",
-    "gulp-rename": "^2.0.0",
+    "imagemin-jpegtran": "^7.0.0",
     "stylelint": "13.6.1",
     "stylelint-config-htmlacademy": "0.1.4"
   },
@@ -41,5 +42,8 @@
   ],
   "engines": {
     "node": "12.18.2"
+  },
+  "dependencies": {
+    "imagemin-mozjpeg": "^9.0.0"
   }
 }

@@ -10,6 +10,9 @@ const rename = require("gulp-rename");
 const svgstore = require("gulp-svgstore");
 const del = require("del");
 const sync = require("browser-sync").create();
+const uglify = require('gulp-uglify');
+const htmlmin = require('gulp-htmlmin');
+// const pipeline = require('readable-stream').pipeline;
 
 // Images
 
@@ -22,7 +25,6 @@ const images = () => {
     ]))
     .pipe(gulp.dest("build/img"))
 }
-
 exports.images = images;
 
 // Sprite
@@ -33,7 +35,6 @@ const sprite = () => {
   .pipe(rename("sprite.svg"))
   .pipe(gulp.dest("build/img"))
 }
-
 exports.sprite = sprite;
 
 
@@ -53,8 +54,25 @@ const styles = () => {
     .pipe(gulp.dest("build/css"))
     .pipe(sync.stream());
 }
-
 exports.styles = styles;
+
+
+// Minification
+
+const js = () => {
+  return gulp.src("source/js/menu.js")
+    .pipe(uglify())
+    .pipe(rename("menu.min.js"))
+    .pipe(gulp.dest("build/js"))
+  };
+exports.js = js;
+
+const html = () => {
+  return gulp.src("source/*.html")
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest("build"))
+  };
+exports.html = html;
 
 // Copy
 
@@ -63,15 +81,12 @@ const copy = () => {
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**",
     "!source/img/**/icon-*.svg",
-    "source/js/**",
     "source/*.ico",
-    "source/*.html"
   ], {
     base: "source"
   })
   .pipe(gulp.dest("build"));
 }
-
 exports.copy = copy;
 
 // Clean
@@ -79,13 +94,11 @@ exports.copy = copy;
 const clean = () => {
     return del("build");
 }
-
 exports.clean = clean;
 
 // Build
 
-const build = gulp.series(clean, copy, styles, sprite, images);
-
+const build = gulp.series(clean, copy, styles, html, js, sprite, images);
 exports.build = build;
 
 // Server
@@ -101,7 +114,6 @@ const server = (done) => {
   });
   done();
 }
-
 exports.server = server;
 
 // Watcher

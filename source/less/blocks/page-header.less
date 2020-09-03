@@ -47,6 +47,12 @@
     justify-content: space-between;
     padding-top: 7px;
   }
+
+  .page-header__logo img {
+    width: 176px;
+    padding-top: 7px;
+    padding-bottom: 5px;
+  }
 }
 
 @media (min-width: @desktop-width) {
@@ -58,10 +64,18 @@
     right: 0;
     top: 0;
     background-color: @basic-green-dark;
+    background-image: url("../img/index-background-desktop@1x.jpg");
+    background-repeat: no-repeat;
   }
 
   .page-header .container {
-    padding-top: 42px;
+    padding-top: 38px;
+  }
+
+  .page-header__logo img {
+    width: 202px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 

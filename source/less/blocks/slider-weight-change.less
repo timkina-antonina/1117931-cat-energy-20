@@ -10,93 +10,65 @@
   text-transform: uppercase;
 }
 
+.slider-weight-change__slider {
+  position: relative;
+  width: 84px;
+  height: 14px;
+  justify-self: center;
+  background-color: @basic-white;
+  border-radius: 6px;
+  border: 1px solid @special-grey-dark;
+  margin-top: 4px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 6px;
+    border-radius: 6px;
+    left: calc(50% - 36px);
+    top: 32%;
+    background-color: @basic-green;
+  }
+}
+
 .slider-weight-change__label--left {
   justify-self: end;
 }
 
 .slider-weight-change__label--right {
   justify-self: start;
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 84px;
-    height: 12px;
-    border: 1px solid @special-grey-dark;
-    border-radius: 6px;
-    left: calc(50% - 44px);
-    top: 65%;
-    background-color: @basic-white;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    width: 35px;
-    height: 6px;
-    border-radius: 6px;
-    left: calc(50% - 39px);
-    top: 73%;
-    background-color: @basic-green;
-  }
-}
-
-.slider-weight-change__slider {
-  justify-self: center;
-
-  &:checked + label::after {
-    content: "";
-    position: absolute;
-    width: 35px;
-    height: 6px;
-    border-radius: 6px;
-    left: calc(50%);
-    top: 73%;
-    background-color: @basic-green;
-  }
 }
 
 @media (min-width: @tablet-width) {
   .slider-weight-change__label {
     font-size: 20px;
-    line-height: 30px;
+    line-height: 35px;
     margin-top: -5px;
     border-bottom: 1px dotted @basic-grey-light;
   }
 
-  .slider-weight-change__label--right {
-    &::before {
-      width: 428px;
-      height: 6px;
-      border: none;
-      left: calc(50% - 214px);
-      top: 65%;
-      background-color: @special-grey-darker;
-    }
-
-    &::after {
-      width: 8px;
-      height: 8px;
-      background-color: @basic-green;
-      border: 12px solid @basic-white;
-      border-radius: 50%;
-      left: calc(50% - 15px);
-      top: 42%;
-      filter:
-        drop-shadow(0 0 1px @special-grey-dark)
-        drop-shadow(0 1px 3px rgba(0, 0, 0, 0.16));
-    }
-  }
-
   .slider-weight-change__slider {
-    &:checked + label::after {
+    content: "";
+    position: absolute;
+    width: 428px;
+    height: 6px;
+    border-radius: 6px;
+    left: calc(50% - 214px);
+    top: 52%;
+    background-color: @special-grey-darker;
+
+    &::before {
+      content: "";
+      position: absolute;
       width: 8px;
       height: 8px;
+      left: calc(50% - 16px);
+      top: -285%;
       background-color: @basic-green;
-      border: 12px solid @basic-white;
       border-radius: 50%;
-      left: calc(50% - 15px);
-      top: 42%;
+      border: 12px solid @basic-white;
+      box-shadow: none;
       filter:
         drop-shadow(0 0 1px @special-grey-dark)
         drop-shadow(0 1px 3px rgba(0, 0, 0, 0.16));

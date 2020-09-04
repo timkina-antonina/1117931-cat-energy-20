@@ -53,8 +53,9 @@
 
 .example__slider {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 120px;
+  grid-template-columns: 1fr min-content 1fr;
+  justify-content: center;
+  column-gap: 18px;
   padding-top: 30px;
   margin-bottom: 35px;
 }
@@ -118,7 +119,8 @@
   }
 
   .example__slider {
-    column-gap: 470px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 480px;
     margin-bottom: 70px;
     margin-top: -8px;
   }
